@@ -93,15 +93,8 @@ if(!isset($response->body->status)) {
     ]));
 }
 
-if($response->body->status == 'error') {
-    die(json_encode([
-        'status' => 'error',
-        'message' => $response->body->message
-    ]));
-}
-
 /* Success check */
-if($response->body->status == 'success') {
+if($response->body->status == 'error') {
 
     /* Prepare the config file content */
     $config_content =
